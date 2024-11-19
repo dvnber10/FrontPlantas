@@ -1,3 +1,4 @@
+@import './Styles/_variables.scss';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +6,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark-mode {
+  --bg-color: #{$dark-bg};
+  --text-color: #{$dark-text};
+}
+.light-mode {
+  --bg-color: #{$light-bg};
+  --text-color: #{$light-text};
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
