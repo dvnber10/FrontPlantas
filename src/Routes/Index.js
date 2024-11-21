@@ -6,14 +6,14 @@ import Card from '../Componets/Card';
 
 const Index = () => {
   const { data: result, isSuccess, isLoading } = GetPlants()
-  const Plantas = isSuccess && result.data
+  const Plant = isSuccess && result.data
   return (
     <div>
       <Navbar />
       <div className="cards-container">
         {
           isLoading ? <span className='carga'><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
-            : isSuccess && Plantas.map((card) => (
+            : isSuccess && Plant.map((card) => (
               <Card
                 key={card.id}
                 id={card.id} 

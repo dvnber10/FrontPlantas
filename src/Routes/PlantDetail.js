@@ -8,17 +8,17 @@ const PlantDetail = () => {
   const { id } = useParams();
   console.log(id);
   const { data: result, isSuccess, isLoading } = GetOnePlant(id);
-  const Planta = isSuccess && result.data
+  const Plant = isSuccess && result.data
   return (
     <div >
       <Navbar />
       <div>
         {isLoading && <p>Cargando...</p>}
-        {isSuccess && Planta && (
+        {isSuccess && Plant && (
           <div className='cont-register'>
-            <h1>{Planta.name}</h1>
-            <p>{Planta.description}</p>
-            <img src={Planta.imagen} alt={Planta.name } className='image-detail' />
+            <h1>{Plant.name}</h1>
+            <p>{Plant.description}</p>
+            <img src={Plant.imagen} alt={Plant.name } className='image-detail' />
           </div>
         )}
       </div>
