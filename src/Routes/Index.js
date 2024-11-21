@@ -15,7 +15,8 @@ const Index = () => {
           isLoading ? <span className='carga'><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
             : isSuccess && Plantas.map((card) => (
               <Card
-                key={card.id} 
+                key={card.id}
+                id={card.id} 
                 name={card.name}
                 image={card.imagen}
               />

@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to="/" >
           Inicio
         </Link>
-        <Link to="/create" >
+        <Link to="/NewRegister" >
           Crear Planta
         </Link>
         <Link to="/update" >

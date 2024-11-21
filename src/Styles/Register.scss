@@ -1,0 +1,68 @@
+.cont-register {
+    text-align: center;
+    align-content: center;
+    display: grid;
+    place-items: center;
+    margin: 5%;
+    background-color: rgb(203, 241, 232);
+    min-height: 400px;
+}
+
+.checkbox {
+    appearance: none;
+    margin-left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.checkbox:checked {
+    background-color: rgb(136, 136, 214);
+}
+
+.checkbox:hover {
+    background-color: cornflowerblue;
+}
+
+.cont-form {
+    text-align: center;
+    align-content: center;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+
+        input,
+        textarea {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            border: 1px solid;
+        }
+    }
+
+    .form-row {
+        display: flex;
+        gap: 1rem;
+
+        label {
+            flex: 1;
+        }
+        textarea{
+            width: 400px;
+            height: 300px;
+        }
+    }
+
+    img {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+}

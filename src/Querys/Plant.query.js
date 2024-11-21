@@ -6,3 +6,7 @@ export async function GetAllPlants() {
     const result = axios.get(`${URL}/Plants/view_all`);
     return result;
 }
+export async function GetPlant(id) {
+    const result = axios.get (`${URL}/Plants/view_plant/${id}`)
+    return result;
+}
