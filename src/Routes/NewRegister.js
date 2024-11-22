@@ -3,7 +3,6 @@ import RegisterPlant from '../Componets/Register/RegisterPlant';
 import RegisterFamily from '../Componets/Register/RegisterFamily';
 import RegisterDisease from '../Componets/Register/RegisterDesease';
 import RegisterPest from '../Componets/Register/RegisterPest';
-import Navbar from '../Componets/Navbar';
 import '../Styles/Register.scss'
 
 const NewRegister = () => {
@@ -15,9 +14,7 @@ const NewRegister = () => {
   };
 
   return (
-    <div >
-      <Navbar />
-
+    <div>
       <form className='cont-register'>
         <h2>Nuevo Registro</h2>
         <div >

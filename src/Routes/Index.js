@@ -1,30 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Componets/Navbar'
-import { GetPlants } from '../Hooks/Plant'
-import Card from '../Componets/Card';
+import { Outlet } from 'react-router-dom';
 
 
 const Index = () => {
-  const { data: result, isSuccess, isLoading } = GetPlants()
-  const Plant = isSuccess && result.data
+
+  const [storage, setStorage] = useState(false);
+
+  useEffect(() => {
+    let store = localStorage.getItem('IsDark');
+    setStorage(store);
+  }, []);
+
   return (
-    <div>
-      <Navbar />
-      <div className="cards-container">
-        {
-          isLoading ? <span className='carga'><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
-            : isSuccess && Plant.map((card) => (
-              <Card
-                key={card.id}
-                id={card.id} 
-                name={card.name}
-                image={card.imagen}
-              />
-            ))
-        }
-      </div>
+    <div className={storage ? 'ligth' : 'dark'}>
+      <Navbar storage={storage} setStorage={setStorage} />
+      <Outlet />
     </div>
   )
 }
+
 
 export default Index

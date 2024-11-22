@@ -1,4 +1,4 @@
-@import './Styles/_variables.scss';
+@use './Styles/_variables.scss' as var;
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,12 +9,12 @@ body {
 }
 
 .dark-mode {
-  --bg-color: #{$dark-bg};
-  --text-color: #{$dark-text};
+  --bg-color: #{var.$dark-bg};
+  --text-color: #{var.$dark-text};
 }
 .light-mode {
-  --bg-color: #{$light-bg};
-  --text-color: #{$light-text};
+  --bg-color: #{var.$light-bg};
+  --text-color: #{var.$light-text};
 }
 body {
   background-color: var(--bg-color);
@@ -25,4 +25,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.dark{
+  background-color: var.$FontDark;
+}
+
+.ligth {
+  background-color: blue;
 }

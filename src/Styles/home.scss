@@ -1,0 +1,34 @@
+@use 'variables' as var;
+
+.cards-container-flow {
+    width: 100%;
+}
+
+.cargada {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    // text-align: center;
+}
+
+.container-flow {
+    background-color: var.$GrisMedio;
+    width: 95%;
+    margin: auto;
+    gap: 16px; 
+    // display: none !important;;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    display: grid !important;
+    padding: 16px;
+}
+
+.cards-contenido {
+    // background-color: blue;
+  }
+
+.loading {
+    width: 20%;
+}

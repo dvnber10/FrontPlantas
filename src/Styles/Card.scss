@@ -3,7 +3,7 @@
     border-radius: 8px;
     overflow: hidden;
     width: 300px;
-    margin: 10px;
+    margin: 10px auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     background-color: rgb(203, 241, 232);
@@ -31,12 +31,6 @@
         color: #555;
       }
     }
-  }
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px; 
-    padding: 16px;
   }
   .carga{
     width: 20px;

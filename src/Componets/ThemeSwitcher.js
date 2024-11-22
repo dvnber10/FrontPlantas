@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../Utility/ThemeContext';
+import React, { useEffect, useState } from 'react';
 import '../Styles/navbar.scss'
+// 
+const ThemeSwitcher = ({setStorage, storage}) => {
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(storage))
+  }, [storage])
 
-const ThemeSwitcher = () => {
-  const { isDark, toggleTheme } = useContext(ThemeContext);
-  console.log(isDark)
   return (
-    <button onClick={toggleTheme} className='button'>
-      {isDark ? '🌙 Dark Mode' : '☀️ Light Mode'}
-      
-    </button>
+    <div>
+      <button onClick={() => setStorage(!storage)} className='button'>
+        {storage ? '🌙 Dark Mode' : '☀️ Light Mode'}
+      </button>
+    </div>
   );
 };
 

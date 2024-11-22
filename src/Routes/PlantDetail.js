@@ -1,17 +1,14 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { GetOnePlant } from '../Hooks/Plant';
-import Navbar from '../Componets/Navbar';
 import '../Styles/details.scss'
 
 const PlantDetail = () => {
   const { id } = useParams();
-  console.log(id);
   const { data: result, isSuccess, isLoading } = GetOnePlant(id);
   const Plant = isSuccess && result.data
   return (
     <div >
-      <Navbar />
       <div>
         {isLoading && <p>Cargando...</p>}
         {isSuccess && Plant && (
