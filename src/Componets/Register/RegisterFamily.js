@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const RegisterFamily = () => {
-  const [formData, setFormData] = useState({ familyName: '' });
-  const [image, setImage] = useState(null);
+  const [setFormData] = useState({ familyName: '' });
+  const [setImage] = useState(null);
   const [preview, setPreview] = useState("https://cdn-icons-png.flaticon.com/512/4131/4131883.png");
 
   const handleInputChange = (event) => {
@@ -24,7 +24,7 @@ const RegisterFamily = () => {
     }
   };
   const handleSubmit = () => {
-    
+
   }
   return (
     <div>

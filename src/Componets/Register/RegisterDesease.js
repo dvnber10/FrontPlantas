@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const RegisterDisease = () => {
-  const [image, setImage] = useState(null);
+  const [setImage] = useState(null);
   const [preview, setPreview] = useState("https://cdn-icons-png.flaticon.com/512/4131/4131883.png");
 
   const handleImageChange = (event) => {
@@ -17,20 +17,20 @@ const RegisterDisease = () => {
   };
 
   const handleSubmit = () => {
-    
+
   }
 
   return (
     <div>
-    <h2>Registrar Enfermedad</h2>
-    <form onSubmit={handleSubmit} className='cont-form'>
-      <div>
-        <label>
-          Nombre de la Emfermedad:
-          <input type="text" name="name" required />
-        </label>
-      </div>
-      <div className='form-row'>
+      <h2>Registrar Enfermedad</h2>
+      <form onSubmit={handleSubmit} className='cont-form'>
+        <div>
+          <label>
+            Nombre de la Emfermedad:
+            <input type="text" name="name" required />
+          </label>
+        </div>
+        <div className='form-row'>
           <label>
             Descripción:
             <textarea name="description" required></textarea>
@@ -47,9 +47,9 @@ const RegisterDisease = () => {
           </label>
 
         </div>
-      <button type="submit">Registrar</button>
-    </form>
-  </div>
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
   );
 };
 

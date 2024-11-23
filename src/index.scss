@@ -1,4 +1,5 @@
 @use './Styles/_variables.scss' as var;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,28 +9,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dark-mode {
-  --bg-color: #{var.$dark-bg};
-  --text-color: #{var.$dark-text};
-}
-.light-mode {
-  --bg-color: #{var.$light-bg};
-  --text-color: #{var.$light-text};
-}
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+// borra scroll 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.dark{
+
+// tema oscuro
+.dark {
   background-color: var.$FontDark;
 }
 
+// tema claro
 .ligth {
-  background-color: blue;
+  background-color: var.$FondoLigth;
+}
+
+.layout {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.body-page{
+  min-height: 90vh;
+}
+
+.footer-ligth {
+  position: sticky;
+  bottom: 0;
+  height: 5vh;
+  background-color: var.$NavbarLigth;
+  color: var.$lettersTitleLigth;
+}
+
+.footer-dark {
+  position: sticky;
+  bottom: 0;
+  height: 5vh;
+  background-color: var.$NavbarDark;
+  color: var.$lettersTitleDark;
 }

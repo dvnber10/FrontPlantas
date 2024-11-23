@@ -15,11 +15,11 @@ const Navbar = ({setStorage, storage}) => {
   };
 
   return (
-      <nav className={storage ? 'navbar' : 'dark-theme'}>
+      <nav className={storage ? 'dark-theme' : 'ligth-theme'}>
         <div>
           <NavLink to="/"> Inicio</NavLink>
-          <NavLink to="Plant/:id"> Crear Planta</NavLink>
-          <NavLink to="NewRegister"> Actualizar Planta</NavLink>
+          <NavLink to="NewRegister"> Crear nuevo</NavLink>
+          <NavLink to="update"> Actualizar Planta</NavLink>
         </div>
 
         {/* Barra de búsqueda */}

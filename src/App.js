@@ -5,6 +5,7 @@ import NewRegister from './Routes/NewRegister';
 import './index.scss'
 import PlantDetail from './Routes/PlantDetail';
 import Home from './Routes/Home';
+import Update from './Routes/Update';
 
 const queryClient = new QueryClient();
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='Plant/:id' element={<PlantDetail />} />
             <Route path='NewRegister' element={<NewRegister />} />
+            <Route path='update' element={<Update />} />
           </Route>
         </Routes>
       </Router>

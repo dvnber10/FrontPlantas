@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../Styles/navbar.scss'
 // 
-const ThemeSwitcher = ({setStorage, storage}) => {
+const ThemeSwitcher = ({ setStorage, storage }) => {
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(storage))
+    localStorage.setItem('IsDark', JSON.stringify(storage))
   }, [storage])
 
   return (
     <div>
       <button onClick={() => setStorage(!storage)} className='button'>
-        {storage ? '🌙 Dark Mode' : '☀️ Light Mode'}
+        {storage ? '☀️ Light Mode' : '🌙 Dark Mode'}
       </button>
     </div>
   );
