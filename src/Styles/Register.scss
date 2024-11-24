@@ -1,68 +1,155 @@
-.cont-register {
+@use 'variables' as var;
+
+
+.conteiner {
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    background-color: var.$GrisMedio;
+    align-items: center;
     text-align: center;
-    align-content: center;
-    display: grid;
-    place-items: center;
-    margin: 5%;
+    justify-content: center;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.cont-register {
+    width: 90%;
+    margin: 50px auto 40px auto;
+    margin-top: 3%;
     background-color: rgb(203, 241, 232);
-    min-height: 400px;
+    border-radius: 15px;
+    padding: 9px 4px;
 }
 
-.checkbox {
-    appearance: none;
-    margin-left: 15px;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    border: 1px solid;
+.options {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.checkbox:checked {
-    background-color: rgb(136, 136, 214);
-}
-
-.checkbox:hover {
-    background-color: cornflowerblue;
+.item {
+    height: 25px;
+    line-height: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .cont-form {
     text-align: center;
     align-content: center;
+    width: 90%;
+    margin: auto;
 
     label {
         display: flex;
         flex-direction: column;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.2rem;
         color: #333;
         margin-bottom: 0.5rem;
+    }
 
-        input,
-        textarea {
+    .name {
+        width: 80%;
+        margin: 0 auto 5px auto;
+
+        input {
+            width: 90%;
             margin-top: 0.5rem;
             padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 10px;
             font-size: 1rem;
             border: 1px solid;
+            text-align: center;
+
+
+            &:focus {
+                border: 2px solid #5e27c5;
+                border-color: blue;
+                outline: none;
+            }
         }
     }
 
     .form-row {
+        margin-top: 15px;
         display: flex;
+        width: 100%;
+        height: 90%;
         gap: 1rem;
 
-        label {
-            flex: 1;
+        .description {
+            width: 60%;
+            margin: auto;
+
+            textarea {
+                width: 95%;
+                min-height: 45vh;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 14px;
+                font-size: 1rem;
+                border: 1px solid;
+
+                &:focus {
+                    border: 2px solid #5e27c5;
+                    border-color: blue;
+                    outline: none;
+                }
+            }
+
+
         }
-        textarea{
-            width: 400px;
-            height: 300px;
+
+        .image {
+            width: 40%;
+
+            input {
+                width: 95%;
+                // padding: 0.5rem;
+                // border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 1rem;
+                border: 1px solid;
+
+                &:focus {
+                    border: 2px solid #5e27c5;
+                    border-color: blue;
+                    outline: none;
+                }
+            }
+
+            img {
+                width: 95%;
+                height: 37vh;
+                margin: auto;
+                border-radius: 15px;
+                border: 2px solid blue;
+            }
+        }
+    }
+}
+
+@media (300px <=width <=600px) {
+
+    .cont-form {
+
+        .form-row {
+            display: block;
+
+            .description{
+                width: 100%;
+                margin-top: 10px;
+            }
+            .image{
+                width: 100%;
+            }
         }
     }
 
-    img {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-    }
 }

@@ -1,5 +1,5 @@
 @use './variables' as var;
-
+// mode dark
 .dark-theme {
   background-color: var.$NavbarDark;
   z-index: 1;
@@ -8,38 +8,63 @@
   align-items: center;
   padding: 15px 25px;
   // background-color: var.$light-bg;
-  color: var.$lettersTitle;
+  color: var.$lettersTitleDark;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
+
+  & a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    &:hover {
+      color: var.$primary-color;
+    }
+  }
+
+  & a.active {
+    color: hwb(14 8% 33%);
+  }
 }
 
-.navbar {
+// mode ligth
+.ligth-theme {
   z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  background-color: var.$light-bg;
-  color: var(--text-color);
+  background-color: var.$NavbarLigth;
+  color: var.$lettersTitleLigth;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-}
 
-a {
-  color: var(--text-color);
-  text-decoration: none;
-  margin-right: 15px;
+  & a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
 
-  &:hover {
-    color: var.$primary-color;
+    &:hover {
+      color: var.$primary-color;
+    }
+  }
+
+  & a.active {
+    color: rgb(85, 35, 12);
   }
 }
+
 
 .search-bar {
   display: flex;
   align-items: center;
+  background-color: red;
 
   input {
     padding: 5px;
