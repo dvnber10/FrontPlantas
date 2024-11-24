@@ -8,17 +8,19 @@ const PlantDetail = () => {
   const { data: result, isSuccess, isLoading } = GetOnePlant(id);
   const Plant = isSuccess && result.data
   return (
-    <div >
-      <div>
-        {isLoading && <p>Cargando...</p>}
-        {isSuccess && Plant && (
-          <div className='cont-register'>
-            <h1>{Plant.name}</h1>
-            <p>{Plant.description}</p>
-            <img src={Plant.imagen} alt={Plant.name } className='image-detail' />
-          </div>
-        )}
-      </div>
+    <div>
+      {isLoading && <p>Cargando...</p>}
+      {isSuccess && Plant && (
+        <div className='cont-register'>
+          <h1> {Plant.name} </h1>
+
+          <section className="description">
+            <img src={Plant.imagen} alt={Plant.name} className='image-detail' />
+            <article>{Plant.description}</article>
+          </section>
+          
+        </div>
+      )}
     </div>
   )
 }

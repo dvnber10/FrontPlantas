@@ -6,7 +6,7 @@ import RegisterPest from '../Componets/Register/RegisterPest';
 import '../Styles/Register.scss'
 
 const NewRegister = () => {
-  const [selectedForm, setSelectedForm] = useState(null);
+  const [selectedForm, setSelectedForm] = useState('plant');
 
   const handleCheckboxChange = (event) => {
     const { value } = event.target;
@@ -14,46 +14,27 @@ const NewRegister = () => {
   };
 
   return (
-    <div>
-      <form className='cont-register'>
+    <div className='conteiner'>
+      <div className='cont-register'>
         <h2>Nuevo Registro</h2>
-        <div >
-          <label>
-            <input className='checkbox'
-              type="checkbox"
-              value="plant"
-              checked={selectedForm === 'plant'}
-              onChange={handleCheckboxChange}
-            />
-            Planta
-          </label>
-          <label>
-            <input className='checkbox'
-              type="checkbox"
-              value="family"
-              checked={selectedForm === 'family'}
-              onChange={handleCheckboxChange}
-            />
-            Familia
-          </label>
-          <label>
-            <input className='checkbox'
-              type="checkbox"
-              value="disease"
-              checked={selectedForm === 'disease'}
-              onChange={handleCheckboxChange}
-            />
-            Enfermedad
-          </label>
-          <label>
-            <input className='checkbox'
-              type="checkbox"
-              value="pest"
-              checked={selectedForm === 'pest'}
-              onChange={handleCheckboxChange}
-            />
-            Plaga
-          </label>
+        <div className='options'>
+          <div className="item">
+            <input className='checkbox' id="plant" name='radio' type="radio" value="plant" checked={selectedForm === 'plant'} onChange={handleCheckboxChange} />
+            <label for='plant'> Planta</label>
+          </div>
+
+          <div className="item">
+            <input className='checkbox' name='radio' type="radio" id='family' value="family" checked={selectedForm === 'family'} onChange={handleCheckboxChange} />
+            <label for="family"> Familia</label>
+          </div>
+          <div className="item">
+            <input className='checkbox' name='radio' type="radio" id='disease' value="disease" checked={selectedForm === 'disease'} onChange={handleCheckboxChange} />
+            <label for='disease'> Enfermedad</label>
+          </div>
+          <div className="item">
+            <input className='checkbox' name='radio' type="radio" id='plague' value="pest" checked={selectedForm === 'pest'} onChange={handleCheckboxChange} />
+            <label for='plague'> Plaga</label>
+          </div>
         </div>
 
         <div>
@@ -62,7 +43,7 @@ const NewRegister = () => {
           {selectedForm === 'disease' && <RegisterDisease />}
           {selectedForm === 'pest' && <RegisterPest />}
         </div>
-      </form>
+      </div>
     </div>
   );
 };

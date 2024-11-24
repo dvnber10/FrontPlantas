@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const RegisterPlant = () => {
   const [image, setImage] = useState(null);
-  const [preview, setPreview] = useState("https://cdn-icons-png.flaticon.com/512/4131/4131883.png");
+  const [preview, setPreview] = useState("https://www.comparapps.com/wp-content/uploads/2020/03/imagenes-para-paginas-web.png");
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -37,29 +37,35 @@ const RegisterPlant = () => {
     <div >
       <h2>Registrar Planta</h2>
       <form onSubmit={handleSubmit} className='cont-form' >
-        <div>
-          <label>
-            Nombre de la Planta:
-            <input type="text" name="name" required />
-          </label>
+        <div className='name'>
+          <label htmlFor='name'> Nombre de la Planta:</label>
+          <input type="text" name="name" id='name' placeholder='Nombre' required />
         </div>
         <div className='form-row'>
-          <label>
-            Descripción:
-            <textarea name="description" required></textarea>
-          </label>
-          <label>
-            Imagen:
-            <input type="file" accept="image/*" onChange={handleImageChange} />
+          <div className="description">
+            <label htmlFor='description'>Descripción:</label>
+            <textarea id='description' name="description" placeholder='Aqui puedes agregar informacion basica de la planta.' required></textarea>
+          </div>
+
+          <div className="image">
+            <label htmlFor='image'>Imagen:</label>
+            <input type="file" id='image' accept="image/*" onChange={handleImageChange} />
+
             {preview && (
               <div>
                 <p>Previsualización:</p>
-                <img src={preview} alt="Previsualización" style={{ width: '200px', height: 'auto' }} />
+                <img htmlFor='image' src={preview} alt="Previsualización" />
               </div>
             )}
-          </label>
+          </div>
 
         </div>
+        <div className="diseases">
+          <h3>Enfermedades</h3>
+
+          <p>aqui voy a poner un componente que busque las enfermedades que atacan a la planta.</p>
+        </div>
+
 
         <button type="submit">Registrar</button>
       </form>
