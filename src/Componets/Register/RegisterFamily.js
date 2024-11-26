@@ -43,7 +43,7 @@ const RegisterFamily = () => {
         </div>
         <button type="submit">Registrar</button>
         {
-          mutation.isPending && <span><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
+          mutation.isPending && <span className='modal'><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
         }
         {
           mutation.isSuccess && Swal.fire({

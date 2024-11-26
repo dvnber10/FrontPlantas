@@ -4,9 +4,59 @@
     width: 100%;
 }
 
+.title-fijo {
+    width: 100%;
+    padding: 5px 0;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    font-size: 2rem;
+    position: sticky;
+    top: 7vh;
+    z-index: 1;
+
+}
+
+.title-ligth {
+    background-color: var.$FondoLigth;
+    color: var.$lettersTitleLigth;
+}
+
+.title-dark {
+    background-color: var.$FontDark;
+    color: var.$lettersTitleDark;
+}
+
+.choose {
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 10px auto;
+    justify-content: space-around;
+
+    a.active {
+        background-color: var.$lettersTitleDark;
+        color: var.$lettersTitleLigth;
+    }
+
+    .boton-choose {
+        padding: 3px 25px;
+        margin: 0 auto 10px auto;
+        text-align: center;
+        background-color: var.$ColorBotones;
+        color: var.$ColorLettersBotones;
+        font-size: 1.1rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+        border-radius: 4px;
+        border: 1px solid var.$ColorBotones;
+    }
+}
+
 .cargada {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +67,7 @@
     background-color: var.$GrisMedio;
     width: 95%;
     margin: auto;
-    gap: 16px; 
-    // display: none !important;;
+    gap: 16px;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     display: grid !important;
     padding: 16px;
@@ -26,4 +75,31 @@
 
 .loading {
     width: 20%;
+}
+
+@media (860px <=width <=1366px) {
+
+    .title-fijo {
+        top: 8vh;
+    }
+
+    .title-ligth,
+    .title-dark {
+        font-size: 1.4rem;
+    }
+
+    .choose {
+        width: 28%;
+
+        & .boton-choose {
+            font-size: 0.9rem;
+            margin: 0 auto 4px auto;
+        }
+    }
+
+    .container-flow {
+        gap: 13px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        padding: 13px;
+    }
 }

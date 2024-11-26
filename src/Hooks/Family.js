@@ -7,3 +7,4 @@ export function CreateFamilyData(){
         mutationFn: async (family) => await CreateFamily(family)
     });
 }
+

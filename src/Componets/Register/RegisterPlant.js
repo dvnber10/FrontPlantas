@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../Styles/plants.scss'
 
 
 const RegisterPlant = () => {
@@ -33,6 +34,12 @@ const RegisterPlant = () => {
     }
   };
 
+  
+  const searchfamily = (data) => {
+    console.log(data);
+
+  };
+
   return (
     <div >
       <h2>Registrar Planta</h2>
@@ -60,14 +67,43 @@ const RegisterPlant = () => {
           </div>
 
         </div>
+        <div className="family">
+          <h3>Familia</h3>
+          <div className="caja-buscador">
+            <div className="show-family">
+              <spam>Aqui es donde se mostrara familia selecionada</spam>
+            </div>
+            <div className="search-family">
+              {/* <label htmlFor="family">Busca familia de la planta</label> */}
+              <input type="text" id='family' name="family" placeholder='Busca familia de la planta' required />
+              <button type="button">Buscar</button>
+              <div className="muestras">
+
+              </div>
+            </div>
+          </div>
+
+        </div>
         <div className="diseases">
           <h3>Enfermedades</h3>
+          <div className="show-diseases">
+            <div className="buscador">
+              <div className="caja-search">
+                <input type="text" id='disease' name="disease" placeholder='Busca enfermedad' required />
+                <button type="button">Buscar</button>
+              </div>
+              <div className="muestras">
+              </div>
+            </div>
+            <div className="Show-diseases">
 
-          <p>aqui voy a poner un componente que busque las enfermedades que atacan a la planta.</p>
+            </div>
+          </div>
+
         </div>
 
 
-        <button type="submit">Registrar</button>
+        <button type="submit" onClick={handleSubmit}>Registrar</button>
       </form>
     </div>
   );

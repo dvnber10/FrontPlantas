@@ -1,7 +1,16 @@
-.image-detail{
-    border-radius: 12px;
-    width: 600px;
-    height: 600px;
+@use 'variables' as var;
+
+
+.container-file{
+    background-color: var.$GrisMedio;
+}
+.hoja {
+    width: 100%;
+    // background-color: var.$GrisMedio;
+}
+
+.image-detail {
+    max-width: 90%;
+    height: 500px;
     margin-bottom: 10px;
-    border: 2px double;
 }

@@ -1,15 +1,12 @@
 @use './variables' as var;
-// mode dark
-.dark-theme {
-  background-color: var.$NavbarDark;
+
+.comunes {
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 15px 25px;
-  // background-color: var.$light-bg;
-  color: var.$lettersTitleDark;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 7vh;
+  padding: 0 25px ;
   position: sticky;
   top: 0;
 
@@ -17,78 +14,65 @@
     color: var(--text-color);
     text-decoration: none;
     margin-right: 15px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
 
     &:hover {
       color: var.$primary-color;
     }
+  }
+}
+
+// mode dark
+.dark-theme {
+  background-color: var.$NavbarDark;
+  color: var.$lettersTitleDark;
+
+  & a {
+    color: var(--text-color);
   }
 
   & a.active {
     color: hwb(14 8% 33%);
   }
+
 }
 
 // mode ligth
 .ligth-theme {
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
   background-color: var.$NavbarLigth;
   color: var.$lettersTitleLigth;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-
-  & a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-right: 15px;
-    font-size: 1.2rem;
-    font-weight: 600;
-
-    &:hover {
-      color: var.$primary-color;
-    }
-  }
 
   & a.active {
     color: rgb(85, 35, 12);
   }
 }
 
+.routes {
+  width: 30%;
+}
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: red;
+.search {
+  width: 40%;
+  text-align: center;
 
-  input {
-    padding: 5px;
+  .buscar {
+    width: 80% !important;
+    padding: 3px;
     border-radius: var.$border-radius;
     border: 1px solid var.$primary-color;
     margin-right: 5px;
-  }
-
-  button {
-    padding: 5px 10px;
-    border-radius: var.$border-radius;
-    border: none;
-    background-color: var.$primary-color;
-    color: #fff;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken(var.$primary-color, 10%);
-    }
+    padding: 5px 0;
   }
 }
 
+.theme {
+  width: 30%;
+  text-align: right;
+}
+
 button {
-  padding: 5px 10px;
+  padding: 5px 25px;
   border-radius: var.$border-radius;
   border: none;
   background-color: var.$primary-color;
@@ -96,6 +80,17 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: darken(var.$primary-color, 10%);
+    background-color: var.$primary-color;
+  }
+}
+
+@media (860px <=width <=1366px) {
+  .comunes {
+    min-height: 8vh;
+
+    & a {
+      font-size: 1rem;
+      font-weight: 700;
+    }
   }
 }

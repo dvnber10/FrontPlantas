@@ -7,6 +7,5 @@ export async function GetAllPlants() {
     return result;
 }
 export async function GetPlant(id) {
-    const result = axios.get (`${URL}/Plants/view_plant/${id}`)
-    return result;
+    return axios.get (`${URL}/Plants/view_plant/${id}`) 
 }

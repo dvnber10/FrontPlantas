@@ -9,7 +9,6 @@ const RegisterPest = () => {
   const [preview, setPreview] = useState("https://www.comparapps.com/wp-content/uploads/2020/03/imagenes-para-paginas-web.png");
   const [Name, setName] = useState("");
   const [Description, setDescription] = useState("");
-  const mutation = CreatePestData()
   const navigate = useNavigate();
 
 
@@ -25,13 +24,16 @@ const RegisterPest = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const mutation = CreatePestData();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (!Name || !Description || !image) {
       Swal.fire({
         title: 'Error al crear la enfermedad',
         icon: 'Error',
         confirmButtonColor: '#1B5091',
-        backdrop: "linear-gradient(to right, #60C8B3, black)",
+        // backdrop: "linear-gradient(to right, #60C8B3, black)",
       })
       return;
     }
@@ -41,7 +43,6 @@ const RegisterPest = () => {
       image: image,
     }
     mutation.mutate(pest);
-    navigate("/")
   }
   return (
     <div>
@@ -69,6 +70,23 @@ const RegisterPest = () => {
 
         </div>
         <button type="submit">Registrar</button>
+        {
+          mutation.isPending && <span className='modal'><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
+        }
+        {
+          mutation.isSuccess && Swal.fire({
+            title: 'El recurso fue cargado con exito',
+            icon: 'success',
+            confirmButtonColor: '#1B5091',
+            customClass: {
+              popup: 'swal2-minimal', 
+            },
+          })
+          && navigate("/plagues")
+        }
+        {
+          mutation.isError && <span>Parece que algo fallo, intenta de nuevo</span>
+        }
       </form>
     </div>
   );

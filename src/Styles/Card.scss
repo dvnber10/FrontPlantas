@@ -1,12 +1,14 @@
+@use 'variables' as var;
+
 .card {
-  border: 1px dotted blueviolet;
+  // border: 1px dotted blueviolet;
   border-radius: 8px;
   overflow: hidden;
   width: 98%;
   margin: 10px auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(105, 17, 17, 0.466);
   transition: transform 0.2s ease-in-out;
-  background-color: rgb(203, 241, 232);
+  background-color: var.$FontCard;
 
   &:hover {
     transform: scale(1.05);
@@ -31,4 +33,29 @@
       color: #555;
     }
   }
+}
+
+
+@media (880px <=width <=1366px) {
+  .card {
+    margin: 6px auto;
+
+    .card-image {
+      height: 140px;
+    }
+
+    .card-content {
+      padding: 3px 6px;
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .card-description {
+        font-size: 1rem;
+        color: #555;
+      }
+    }
+  }
+
 }

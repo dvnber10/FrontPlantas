@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../Styles/navbar.scss'
+import '../../Styles/navbar.scss'
 // 
 const ThemeSwitcher = ({ setStorage, storage }) => {
   useEffect(() => {

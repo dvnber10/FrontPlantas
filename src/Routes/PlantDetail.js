@@ -1,26 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { GetOnePlant } from '../Hooks/Plant';
 import '../Styles/details.scss'
 
-const PlantDetail = () => {
+const PlantDetail = ({ route }) => {
+
+  const [datos, setDatos] = useState();
   const { id } = useParams();
   const { data: result, isSuccess, isLoading } = GetOnePlant(id);
   const Plant = isSuccess && result.data
   return (
     <div>
-      {isLoading && <p>Cargando...</p>}
-      {isSuccess && Plant && (
-        <div className='cont-register'>
-          <h1> {Plant.name} </h1>
+      {
+        isLoading && <spam className='cargada'>
+          <img
+            className="loading"
+            src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif"
+            alt="Loaging ..."
+          />
+        </spam>
+      }
+      {
+        isSuccess && Plant &&
+        <div className='container-file'>
+          <div className='hoja'>            
+            <h1 className='title-dark'> {Plant.name} </h1>
 
-          <section className="description">
-            <img src={Plant.imagen} alt={Plant.name} className='image-detail' />
-            <article>{Plant.description}</article>
-          </section>
-          
+            <div className="conteiner-image">
+              <img src={Plant.imagen} alt={Plant.name} className='image-detail' />
+            </div>
+
+            <section className="description">
+              <article>{Plant.description}</article>
+            </section>
+          </div>
         </div>
-      )}
+      }
     </div>
   )
 }
