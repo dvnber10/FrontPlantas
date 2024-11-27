@@ -45,18 +45,29 @@ code {
   min-height: 90vh;
 }
 
-.footer-ligth {
+.footer {
   position: sticky;
   bottom: 0;
   height: 5vh;
+}
+
+.footer-ligth {
   background-color: var.$NavbarLigth;
   color: var.$lettersTitleLigth;
 }
 
 .footer-dark {
-  position: sticky;
-  bottom: 0;
-  height: 5vh;
   background-color: var.$NavbarDark;
   color: var.$lettersTitleDark;
+}
+
+@media (30px <=width <=860px) {
+
+  .layout {
+    width: 100%;
+  }
+
+  .body-page {
+    min-height: 100vh;
+  }
 }

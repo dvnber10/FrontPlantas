@@ -2,11 +2,12 @@
 
 .comunes {
   z-index: 1;
+  line-height: 8vh;
   display: flex;
+  margin: auto;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-  line-height: 7vh;
-  padding: 0 25px ;
+  gap: 10px;
   position: sticky;
   top: 0;
 
@@ -50,11 +51,21 @@
 
 .routes {
   width: 30%;
+  text-align: center;
 }
 
 .search {
   width: 40%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box-search {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    line-height: 8vh;
+  }
 
   .buscar {
     width: 80% !important;
@@ -67,8 +78,8 @@
 }
 
 .theme {
-  width: 30%;
-  text-align: right;
+  width: 28%;
+  text-align: center;
 }
 
 button {
@@ -93,4 +104,45 @@ button {
       font-weight: 700;
     }
   }
+}
+
+@media (30px <=width <=860px) {
+  .comunes {
+    line-height: 3vh;
+    justify-content: space-evenly;
+
+    & a {
+      padding: 15px 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .routes {
+      display: flex;
+      width: 60%;
+    }
+
+    .theme {
+      width: 30%;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+
+    .button {
+      padding: 7px 5px;
+      line-height: 15px;
+    }
+
+    .search {
+      order: 1;
+      width: 95%;
+
+      .box-search {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+
 }

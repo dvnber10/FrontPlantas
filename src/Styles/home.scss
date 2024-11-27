@@ -103,3 +103,29 @@
         padding: 13px;
     }
 }
+
+@media (30px <= width <= 880px) {
+    .title-fijo {
+        top: 8vh;
+    }
+
+    .title-ligth,
+    .title-dark {
+        font-size: 1.3rem;
+    }
+
+    .choose {
+        width: 100%;
+
+        & .boton-choose {
+            font-size: 0.9rem;
+            margin: 0 auto 4px auto;
+        }
+    }
+
+    .container-flow {
+        gap: 5px;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        padding: 13px;
+    }
+}
