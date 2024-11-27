@@ -24,13 +24,14 @@ const PlantDetail = ({ route }) => {
         isSuccess && Plant &&
         <div className='container-file'>
           <div className='hoja'>            
-            <h1 className='title-dark'> {Plant.name} </h1>
+            <h1 className='title'> {Plant.name} </h1>
 
-            <div className="conteiner-image">
+            <div className="container-image">
               <img src={Plant.imagen} alt={Plant.name} className='image-detail' />
             </div>
 
             <section className="description">
+              <h2>Datalles</h2>
               <article>{Plant.description}</article>
             </section>
           </div>
