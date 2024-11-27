@@ -1,0 +1,56 @@
+@use 'variables' as var;
+
+.family {
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 15px;
+
+    & .caja-buscador {
+        display: flex;
+        padding: 8px 0;
+        background-color: var.$colorCajas;
+        border-radius: 10px;
+        height: 15vh;
+
+        & .show-family {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40%;
+            border-right: 2px solid var.$FontDark;
+        }
+
+        & .search-family {
+            width: 60%;
+
+            & #family {
+                width: 70%;
+                margin: 0 10px;
+                padding: 3px;
+                border-radius: 4px;
+            }
+
+            & .muestras {
+                // background-color: blue;
+                margin: 5px auto;
+                width: 97%;
+                height: 70%;
+                overflow-y: scroll;
+            }
+        }
+    }
+}
+
+.diseases{
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 15px;
+
+    & .show-diseases{
+        width: 100%;
+        height: 15vh;
+        background-color: var.$colorCajas;
+        display: flex;
+    }
+
+}

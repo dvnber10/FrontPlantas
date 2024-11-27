@@ -22,6 +22,7 @@ const RegisterDisease = () => {
       reader.readAsDataURL(file); // Convierte la imagen en base64
     }
   };
+
   const mutation = CreateDeseasesData()
 
   const handleSubmit = (e) => {
@@ -41,11 +42,10 @@ const RegisterDisease = () => {
       image: image,
     }
     mutation.mutate(desease);
-    navigate("/")
   }
 
   return (
-    <div>
+    <div>.
       <h2>Registrar Enfermedad</h2>
       <form onSubmit={handleSubmit} className='cont-form'>
         <div className='name'>
@@ -71,16 +71,18 @@ const RegisterDisease = () => {
         </div>
         <button type="submit">Registrar</button>
         {
-          mutation.isPending && <span><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
+          mutation.isPending && <span className='modal'><img className="Loading" src="https://mvalma.com/inicio/public/include/img/ImagenesTL/paginaTL/Cargando.gif" alt="Cargando" /></span>
         }
         {
           mutation.isSuccess && Swal.fire({
             title: 'El recurso fue cargado con exito',
             icon: 'success',
             confirmButtonColor: '#1B5091',
-            backdrop: "linear-gradient(to right, #60C8B3, black)",
+            customClass: {
+              popup: 'swal2-minimal',
+            },
           })
-          && navigate("/")
+          && navigate("/diseases")
         }
         {
           mutation.isError && <span>Parece que algo fallo, intenta de nuevo</span>
