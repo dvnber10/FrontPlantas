@@ -15,33 +15,34 @@ const Navbar = ({ setStorage, storage }) => {
   };
 
   return (
-    <div className={`${storage ? 'dark-theme' : 'ligth-theme'} comunes`}>
-      <div className='routes'>
-        <NavLink to="/"> Inicio</NavLink>
-        <NavLink to="NewRegister"> Crear nuevo</NavLink>
-        <NavLink to="update"> Actualizar Planta</NavLink>
-      </div>
+    <div className={`${storage ? 'dark-theme' : 'ligth-theme'} container-row`}>
+      <div className={`comunes`}>
+        <div className='routes'>
+          <NavLink to="/"> Inicio</NavLink>
+          <NavLink to="NewRegister"> Crear nuevo</NavLink>
+        </div>
 
-      {/* Barra de búsqueda */}
-      <div className="search">
-        <form onSubmit={handleSearch}>
-          <input
-            className='buscar'
-            type="text"
-            placeholder="Buscar plantas..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button
-            className='buscar-btn'
-            type="submit"
-          >
-            Buscar
-          </button>
+        {/* Barra de búsqueda */}
+        <form  className='search' onSubmit={handleSearch}>
+          <div className="box-search">
+            <input
+              className='buscar'
+              type="text"
+              placeholder="Buscar plantas..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button
+              className='boton'
+              type="submit"
+            >
+              Buscar
+            </button>
+          </div>
         </form>
-      </div>
-      <div className="theme">
-        <ThemeSwitcher setStorage={setStorage} storage={storage} />
+        <div className="theme">
+          <ThemeSwitcher setStorage={setStorage} storage={storage} />
+        </div>
       </div>
     </div>
   );
