@@ -28,7 +28,7 @@ function Diseases() {
                                 <>no se encontro data</>
                                 :
                                 isSuccess && Diseases.map((card) => (
-                                    <Card key={card.id} id={card.id} name={card.diseasesName} image={card.imagen} />
+                                    <Card key={card.id} id={card.id} name={card.diseasesName} image={card.imagen} route="Disease"/>
                                 ))
                         }
                     </div>

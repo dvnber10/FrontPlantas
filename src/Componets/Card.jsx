@@ -2,11 +2,11 @@ import React from "react";
 import "../Styles/Card.scss"; // Archivo de estilos para las tarjetas
 import { useNavigate } from "react-router-dom";
 
-const Card = ({id, name, image }) => {
-    const navigate = useNavigate();
-    const Clicked = () => {
-        navigate(`/Plant/${id}`)
-    }
+const Card = ({ id, name, image, route }) => {
+  const navigate = useNavigate();
+  const Clicked = () => {
+    navigate(`/details/${route}/${id}`)
+  }
   return (
     <div className="card" onClick={Clicked}>
       <img src={image} alt={name} className="card-image" />

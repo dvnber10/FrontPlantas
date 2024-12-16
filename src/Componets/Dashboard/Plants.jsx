@@ -25,7 +25,7 @@ function Plants() {
                     <div className='container-flow'>
                         {
                             isSuccess && Plant.map((card) => (
-                                <Card key={card.id} id={card.id} name={card.name} image={card.imagen} />
+                                <Card key={card.id} id={card.id} name={card.name} image={card.imagen} route="Plant" />
                             ))
                         }
                     </div>

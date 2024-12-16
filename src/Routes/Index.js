@@ -19,7 +19,7 @@ const Index = () => {
       <div className="body-page">
         <Outlet context={[storage]} />
       </div>
-      <div className={storage ? 'footer-dark' : 'footer-ligth'}>
+      <div className={`${storage ? 'footer-dark' : 'footer-ligth'} footer`}>
         <Footer />
       </div>
     </div>

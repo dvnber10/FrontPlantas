@@ -1,10 +1,7 @@
-import axios from "axios";
-import { URL } from "./Plant.query";
-
+import { api } from "./AxiosConf";
 
 export async function CreateDeseases(desease) {
-    console.log(URL);
-    const result = axios.post(`${URL}/Diseases/insert`, {
+    return api.post(`/Diseases/insert`, {
         Name: desease.name,
         Description: desease.description,
         image: desease.image
@@ -15,9 +12,12 @@ export async function CreateDeseases(desease) {
             },
         }
     );
-    return result;
 }
 
 export async function GetAllDiseases() {
-    return await axios.get(`${URL}/Diseases/view_all`);
+    return await api.get(`/Diseases/view_all`);
+}
+
+export async function DiseaseOne(id) {
+    return api.get(`/Diseases/view_disease/${id}`);
 }
