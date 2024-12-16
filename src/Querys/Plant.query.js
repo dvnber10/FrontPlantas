@@ -1,11 +1,11 @@
-import axios from "axios";
+import { api } from "./AxiosConf";
 
-export const URL= "https://backplants-bahcajbnhchabudu.canadacentral-01.azurewebsites.net/api";
-
+// obtain all the data of the plants
 export async function GetAllPlants() {
-    const result = axios.get(`${URL}/Plants/view_all`);
-    return result;
+    return api.get(`/Plants/view_all`);
 }
+// obtain the data of one plant by its id
 export async function GetPlant(id) {
-    return axios.get (`${URL}/Plants/view_plant/${id}`) 
+    return api.get(`/Plants/view_plant/${id}`)
 }
+

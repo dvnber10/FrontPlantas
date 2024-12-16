@@ -1,8 +1,7 @@
-import axios from "axios";
-import { URL } from "./Plant.query";
+import { api } from "./AxiosConf";
 
 export async function createPest(pest) {
-    return await axios.post(`${URL}/Plague/insert`,
+    return await api.post(`/Plague/insert`,
         {
             Name: pest.name,
             Description: pest.description,
@@ -16,6 +15,13 @@ export async function createPest(pest) {
 }
 
 
+// view something the plagues
 export async function GetAllPlague() {
-    return axios.get(`${URL}/Plague/view_all`);
+    return await api.get(`/Plague/view_all`);
+}
+
+// view one plague
+export async function OnePlague(id)
+{
+    return await api.get(`/Plague/view_plague/${id}`);
 }

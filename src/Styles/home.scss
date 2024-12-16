@@ -119,13 +119,14 @@
 
         & .boton-choose {
             font-size: 0.9rem;
-            margin: 0 auto 4px auto;
+            // margin: 0 auto 4px auto;
         }
     }
 
     .container-flow {
+        width: 99%;
         gap: 5px;
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-        padding: 13px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        padding: 0;
     }
 }

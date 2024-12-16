@@ -9,6 +9,9 @@ import Update from './Routes/Update';
 import Plants from './Componets/Dashboard/Plants';
 import Diseases from './Componets/Dashboard/Diseases';
 import Plagues from './Componets/Dashboard/Plagues';
+import DiseaseDetails from './Componets/Details/DiseaseDetails';
+import NotFound from './Routes/NotFound';
+import DetailsPlague from './Componets/Details/DetailsPlague';
 
 const queryClient = new QueryClient();
 function App() {
@@ -22,11 +25,16 @@ function App() {
               <Route path='diseases' element={<Diseases />} />
               <Route path='plagues' element={<Plagues />} />
             </Route>
-
-            <Route path='Plant/:id' element={<PlantDetail />} />
+            <Route path='details'>
+              <Route path='Plant/:id' element={<PlantDetail />} />
+              <Route path='Disease/:id' element={<DiseaseDetails />} />
+              <Route path='Plague/:id' element={<DetailsPlague />} />
+            </Route>
             <Route path='NewRegister' element={<NewRegister />} />
             <Route path='update' element={<Update />} />
           </Route>
+
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Router>
     </QueryClientProvider>

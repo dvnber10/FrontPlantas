@@ -26,7 +26,7 @@ function Plagues() {
                 <>no se encontro data</>
                 :
                 isSuccess && Plagues.map((card) => (
-                  <Card key={card.id} id={card.id} name={card.name} image={card.image} />
+                  <Card key={card.id} id={card.id} name={card.name} image={card.image} route="Plague" />
                 ))
             }
           </div>

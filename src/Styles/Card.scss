@@ -36,7 +36,7 @@
 }
 
 
-@media (880px <=width <=1366px) {
+@media (860px <=width <=1366px) {
   .card {
     margin: 6px auto;
 
@@ -54,6 +54,22 @@
       .card-description {
         font-size: 1rem;
         color: #555;
+      }
+    }
+  }
+}
+
+@media (30px <=width <=1000px) {
+  .card {
+    .card-image {
+      height: 100px;
+    }
+
+    .card-content {
+      padding: 0 3px;
+
+      .card-title {
+        font-size: 0.8rem;
       }
     }
   }

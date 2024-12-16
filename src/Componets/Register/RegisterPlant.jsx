@@ -35,10 +35,10 @@ const RegisterPlant = () => {
   };
 
   
-  const searchfamily = (data) => {
-    console.log(data);
+  // const searchfamily = (data) => {
+  //   console.log(data);
 
-  };
+  // };
 
   return (
     <div >

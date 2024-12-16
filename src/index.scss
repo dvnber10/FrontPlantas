@@ -70,4 +70,9 @@ code {
   .body-page {
     min-height: 100vh;
   }
+
+  .footer {
+    position: sticky;
+    bottom: 0;
+  }
 }
