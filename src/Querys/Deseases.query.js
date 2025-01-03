@@ -1,7 +1,8 @@
 import { api } from "./AxiosConf";
 
 export async function CreateDeseases(desease) {
-    return api.post(`/Diseases/insert`, {
+    console.log(desease)
+    return await api.post(`/Diseases/insert`, {
         Name: desease.name,
         Description: desease.description,
         image: desease.image
@@ -19,5 +20,5 @@ export async function GetAllDiseases() {
 }
 
 export async function DiseaseOne(id) {
-    return api.get(`/Diseases/view_disease/${id}`);
+    return await api.get(`/Diseases/view_disease/${id}`);
 }
