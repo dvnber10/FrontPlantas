@@ -4,45 +4,22 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
+
+export const imgDefault = 'https://www.comparapps.com/wp-content/uploads/2020/03/imagenes-para-paginas-web.png'; // declaracion de la imagen por default
 const RegisterDisease = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const [image, setImage] = useState(null);
-  const [preview, setPreview] = useState("https://www.comparapps.com/wp-content/uploads/2020/03/imagenes-para-paginas-web.png");
+  const [preview, setPreview] = useState(null);
 
-  const [Name, setName] = useState("");
-  const [Description, setDescription] = useState("");
   const navigate = useNavigate();
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setImage(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   const mutation = CreateDeseasesData()
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (!Name || !Description || !image) {
-      Swal.fire({
-        title: 'Error al crear la enfermedad',
-        icon: 'Error',
-        confirmButtonColor: '#1B5091',
-        backdrop: "linear-gradient(to right, #60C8B3, black)",
-      })
-      return;
-    }
+  const onSubmit = (data) => {
     const desease = {
-      name: Name,
-      description: Description,
-      image: image,
+      name: data.name,
+      description: data.description,
+      image: data.image[0],
     }
     mutation.mutate(desease);
   }
@@ -56,30 +33,48 @@ const RegisterDisease = () => {
           <input
             {...register("name",
               {
-                required: true,
-                maxLength: 20,
-                message: "Nombre de la Enfermedad vacio"
+                required: {
+                  value: true,
+                  message: "Name is required"
+                }
               }
             )}
             placeholder='Enfermedad'
-            value={Name} onChange={(e) => setName(e.target.value)}
           />
-          {errors.name && <p role="alert" style={{ color: 'black'}}>{errors.mail?.message}</p>}
+          {<h5 className="alert" style={{ color: 'black' }}>{errors.name?.message}</h5>}
         </div>
         <div className='form-row'>
           <div className="description">
             <label htmlFor='description'>Descripción:</label>
-            <textarea name="description" required id='description' placeholder='Aqui puedes agregar informacion de la enfermedad.' value={Description} onChange={(e) => setDescription(e.target.value)}></textarea>
+            <textarea name="description" id='description'
+              {...register('description', {
+                required: {
+                  value: true,
+                  message: 'Description is required'
+                }
+              })}
+              placeholder='Aqui puedes agregar informacion de la enfermedad.'></textarea>
+            {<h5 className='alert'>{errors.description?.message}</h5>}
           </div>
           <div className="image">
             <label htmlFor='image'>Imagen:</label>
-            <input type="file" id='image' accept="image/*" onChange={handleImageChange} />
-            {preview && (
+            <input type="file" id='image' accept="image/*" 
+            {...register('image',
+              {
+                required:{
+                  value: true,
+                  message: 'Image required'
+                },
+                onChange: (e) => {
+                  setPreview(URL.createObjectURL(e.target.files[0]))
+                }
+              }
+            )} />
+            {<h5 className='alert'>{errors.image?.message}</h5>}
               <div>
                 <p>Previsualización:</p>
-                <img src={preview} alt="Previsualización" />
+                <img htmlFor='image' src={preview || imgDefault} alt="Previsualización" />
               </div>
-            )}
           </div>
 
         </div>
@@ -99,7 +94,7 @@ const RegisterDisease = () => {
           && navigate("/diseases")
         }
         {
-          mutation.isError && <span>Parece que algo fallo, intenta de nuevo</span>
+          mutation.isError && <h5 className='alert'>{mutation.error?.message}</h5>
         }
       </form>
     </div>

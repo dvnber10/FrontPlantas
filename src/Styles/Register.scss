@@ -1,179 +1,202 @@
 @use 'variables' as var;
 
 .modal {
-    background-color: var.$GrisMedio;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var.$GrisMedio;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    & .Loading {
-        width: 20%;
-    }
+  & .Loading {
+    width: 20%;
+  }
 }
 
-
 .conteiner {
-    width: 90%;
-    height: 100vh;
-    margin: auto;
-    background-color: var.$GrisMedio;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    overflow: scroll;
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  background-color: var.$GrisMedio;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  overflow: scroll;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .cont-register {
-    width: 90%;
-    margin: 50px auto 40px auto;
-    margin-top: 3%;
-    background-color: rgb(203, 241, 232);
-    border-radius: 15px;
-    padding: 9px 4px;
+  width: 90%;
+  margin: 50px auto 40px auto;
+  margin-top: 3%;
+  background-color: rgb(203, 241, 232);
+  border-radius: 15px;
+  padding: 9px 4px;
 }
 
 .options {
-    width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .item {
-    height: 25px;
-    line-height: 25px;
-    font-size: 1.1rem;
-    font-weight: 500;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
-
 
 .alert {
-    color: rgb(97, 33, 33);
-    margin: 0;
-    text-align: start;
-    padding-left: 1rem;
-    font-size: 15px;
+  color: rgb(97, 33, 33);
+  margin: 0;
+  text-align: start;
+  padding-left: 1rem;
+  font-size: 15px;
 }
 
+.activado {
+  background-color: var.$NavbarDark;
+  color: var.$ColorLettersBotones;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px 0 0 10px;
+}
+
+.cambiar {
+  margin: 9px auto 0 auto;
+  width: 80%;
+  border-radius: 9px;
+  background-color: var.$GrisMedio;
+  position: relative;
+  top: 0;
+  right: 0;
+  color: blue;
+  cursor: pointer;
+}
+.sobre {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  color: var.$GrisMedio;
+  background-color: #333;
+  border-radius: 0 10px 10px 0;
+  font-weight: 600;
+}
 
 .cont-form {
-    text-align: center;
-    align-content: center;
-    width: 90%;
-    margin: auto;
+  text-align: center;
+  align-content: center;
+  width: 90%;
+  margin: auto;
 
-    label {
-        display: flex;
-        flex-direction: column;
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: #333;
-        margin-bottom: 0.5rem;
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .name {
+    width: 80%;
+    margin: 0 auto 5px auto;
+
+    input {
+      width: 95%;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: 1px solid;
+      text-align: center;
+
+      &:focus {
+        border: 2px solid #5e27c5;
+        border-color: blue;
+        outline: none;
+      }
+    }
+  }
+
+  .form-row {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    height: 90%;
+    gap: 1rem;
+
+    .description {
+      width: 60%;
+      margin: auto;
+
+      textarea {
+        width: 95%;
+        min-height: 45vh;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 14px;
+        font-size: 1rem;
+        border: 1px solid;
+
+        &:focus {
+          border: 2px solid #5e27c5;
+          border-color: blue;
+          outline: none;
+        }
+      }
     }
 
-    .name {
-        width: 80%;
-        margin: 0 auto 5px auto;
+    .image {
+      width: 40%;
 
-        input {
-            width: 95%;
-            margin-top: 0.5rem;
-            padding: 0.5rem;
-            border-radius: 10px;
-            font-size: 1rem;
-            border: 1px solid;
-            text-align: center;
+      input {
+        width: 95%;
+        border-radius: 6px;
+        font-size: 1rem;
+        border: 1px solid;
 
-
-            &:focus {
-                border: 2px solid #5e27c5;
-                border-color: blue;
-                outline: none;
-            }
+        &:focus {
+          border: 2px solid #5e27c5;
+          border-color: blue;
+          outline: none;
         }
+      }
+
+      img {
+        width: 95%;
+        height: 37vh;
+        margin: auto;
+        border-radius: 15px;
+        border: 2px solid blue;
+      }
     }
-
-    .form-row {
-        margin-top: 15px;
-        display: flex;
-        width: 100%;
-        height: 90%;
-        gap: 1rem;
-
-        .description {
-            width: 60%;
-            margin: auto;
-
-            textarea {
-                width: 95%;
-                min-height: 45vh;
-                padding: 0.5rem;
-                border: 1px solid #ccc;
-                border-radius: 14px;
-                font-size: 1rem;
-                border: 1px solid;
-
-                &:focus {
-                    border: 2px solid #5e27c5;
-                    border-color: blue;
-                    outline: none;
-                }
-            }
-        }
-
-        .image {
-            width: 40%;
-            
-            input {
-                width: 95%;
-                border-radius: 6px;
-                font-size: 1rem;
-                border: 1px solid;
-                
-                &:focus {
-                    border: 2px solid #5e27c5;
-                    border-color: blue;
-                    outline: none;
-                }
-            }
-            
-            img {
-                width: 95%;
-                height: 37vh;
-                margin: auto;
-                border-radius: 15px;
-                border: 2px solid blue;
-            }
-        }
-    }
+  }
 }
 
 @media (300px <=width <=600px) {
+  .cont-form {
+    .form-row {
+      display: block;
 
-    .cont-form {
+      .description {
+        width: 100%;
+        margin-top: 10px;
+      }
 
-        .form-row {
-            display: block;
-
-            .description {
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .image {
-                width: 100%;
-            }
-        }
+      .image {
+        width: 100%;
+      }
     }
-
+  }
 }
-

@@ -3,7 +3,7 @@ import { CreateDeseases, DiseaseOne, GetAllDiseases } from '../Querys/Deseases.q
 
 export function CreateDeseasesData() {
     return useMutation({
-        mutationKey: 'Deseases',
+        mutationKey: ['Deseases'],
         mutationFn: async (desease) => await CreateDeseases(desease)
     });
 }
